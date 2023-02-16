@@ -1,0 +1,174 @@
+ nav {
+     padding: 45px 0;
+     background-color: rgb(150, 187, 183)
+ }
+ 
+ .menu {
+     @include centerItems ();
+     column-gap: 64px;
+     @include for-nav() {
+         justify-content: space-between;
+     }
+     &__input {
+         display: none;
+     }
+     &__btn {
+         display: none;
+         @include for-nav() {
+             padding-left: 50px;
+             display: block;
+         }
+     }
+     &__bar {
+         @include centerItems ();
+         justify-content: space-between;
+         width: 100%;
+         @include for-nav() {
+             flex-direction: column;
+             height: 100vh;
+             justify-content: center;
+             position: fixed;
+             top: 0;
+             right: -100%;
+             background-color: #36536B;
+             z-index: 10;
+             transition: 0.5s linear;
+             padding: 0 24px;
+         }
+     }
+     &__logo {
+         width: 100%;
+         max-width: 133px;
+         object-fit: cover;
+         height: 37px
+     }
+     &__ul {
+         @include centerItems();
+         column-gap: 40px;
+         @include for-nav() {
+             flex-direction: column;
+             row-gap: 32px;
+             padding-bottom: 48px;
+             border-top: 3px solid $white-color;
+             width: 100%;
+             padding-top: 43px;
+         }
+         &-link {
+             font-weight: 700;
+             font-size: 15px;
+             line-height: 18px;
+             color: $main-color;
+             text-decoration: none;
+             opacity: 0.7;
+             @include for-nav () {
+                 color: $white-color;
+                 opacity: 1;
+             }
+         }
+     }
+ }
+ 
+ .menu__input:checked~.menu__bar {
+     right: 0;
+ }
+ 
+ .menu__div {
+     width: 546px;
+     height: 345px;
+     margin-top: 166px;
+     @include for-large-planshet() {
+         order: 2;
+         margin-top: 48px;
+     }
+ }
+ 
+ .menu__p {
+     max-width: 529px;
+     font-size: 72px;
+     line-height: 72px;
+     letter-spacing: -0.553846px;
+     color: #36536B;
+     @include for-large-planshet() {
+         font-size: 48px;
+         max-width: 525px;
+         text-align: center;
+     }
+     @include for-large-mobile() {}
+ }
+ 
+ .menu__label {
+     font-size: 15px;
+     color: $main-color;
+     opacity: 0.5;
+     Width: 445px;
+     Height: 48px;
+     background-color: $main-bg;
+     box-shadow: 10px 10px 20px 0px rgb(0 0 0 / 25%);
+     border-radius: 24px;
+     border: none;
+     @include for-large-planshet() {
+         width: 100%;
+     }
+ }
+ 
+ .menu__label::placeholder {
+     padding: 16px 0 14px 27px;
+ }
+ 
+ .menu__button {
+     position: absolute;
+     left: 272px;
+     top: 0px;
+     font-size: 15px;
+     letter-spacing: -0.115385px;
+     color: #FBFCFE;
+     Width: 173px;
+     Height: 48px;
+     background-color: $btn-bg;
+     border-radius: 24px;
+     border: none;
+     cursor: pointer;
+     @include for-large-planshet() {
+         position: absolute;
+         top: 65px;
+         left: 10px;
+         Width: 100%;
+         Height: 48px;
+         background-color: $btn-bg;
+         border-radius: 24px;
+     }
+ }
+ 
+ form {
+     margin-top: 21px;
+     position: relative;
+ }
+ 
+ h2 {
+     padding-top: 16px;
+     font-size: 15px;
+     color: #6C8294;
+     @include for-large-planshet() {
+         position: relative;
+         top: 88px;
+         left: -35px;
+         text-align: center;
+     }
+ }
+ 
+ .menu__container {
+     align-items: center;
+     display: flex;
+     justify-content: space-between;
+     @include for-tablet() {
+         flex-direction: column;
+     }
+ }
+ 
+ .menu__icon {
+     object-fit: cover;
+     order: 1;
+     max-width: 263px;
+     height: 500px;
+     text-align: center;
+ }
